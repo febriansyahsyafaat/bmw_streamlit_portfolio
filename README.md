@@ -2,6 +2,9 @@
 
 Sebuah aplikasi web berbasis Streamlit untuk memprediksi harga mobil BMW berdasarkan berbagai fitur menggunakan machine learning.
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge.svg)](https://prediksi-bmw-febriansyah.streamlit.app)
+**Live Demo:** [Klik di sini untuk mencoba aplikasi](https://prediksi-bmw-febriansyah.streamlit.app)
+
 ## Struktur Proyek
 ```
 bmw_streamlit_portfolio/
@@ -56,7 +59,15 @@ Dataset berisi informasi penjualan mobil BMW dengan fitur-fitur:
 - Fuel Type (Jenis Bahan Bakar)
 - dan lainnya
 
+## Performa Model
+Model ini dievaluasi menggunakan data uji dan memberikan hasil:
+- **R² Score:** 0.XX (Sangat baik dalam menjelaskan varians harga)
+- **Mean Absolute Error (MAE):** £X,XXX (Rata-rata selisih prediksi dengan harga asli)
+
 ## Model
+- **Python** (Pandas, NumPy, Scikit-Learn)
+- **Visualization:** Matplotlib, Seaborn
+- **Deployment:** Streamlit Cloud
 Model machine learning dilatih menggunakan algoritma Random Forest dengan fitur-fitur yang telah dioptimasi.
 
 ## Author
