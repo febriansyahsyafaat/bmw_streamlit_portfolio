@@ -58,15 +58,26 @@ model = load_model()
 # ---------------------------------------------------------------
 st.sidebar.title("👤 Tentang Saya")
 
-# Load and display profile photo
-try:
-    if PROFILE_PHOTO.exists():
-        profile_img = Image.open(PROFILE_PHOTO)
-        st.sidebar.image(profile_img, width=200)
-    else:
-        st.sidebar.warning("⚠️ Foto profil belum ditambahkan ke folder assets/")
-except Exception as e:
-    st.sidebar.warning(f"⚠️ Error saat memuat foto: {str(e)}")
+def load_profile_pic(path):
+    try:
+        if path.exists():
+            # .convert("RGB") akan mengubah data gambar mentah 
+            # menjadi format warna yang dipahami Python
+            img = Image.open(path).convert("RGB") 
+            return img
+        return None
+    except:
+        
+        return None
+
+# Panggil fungsinya
+profile_img = load_profile_pic(PROFILE_PHOTO)
+
+if profile_img:
+    st.sidebar.image(profile_img, width=200)
+else:
+    # Tampilkan teks ramah sebagai pengganti jika foto error
+    st.sidebar.info("📷 Foto Profil")
 
 st.sidebar.markdown("""
 **Nama:** Febriansyah Syafaat  
